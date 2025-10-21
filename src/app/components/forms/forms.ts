@@ -14,8 +14,7 @@ export class Forms implements OnInit {
   results = [];
   formGroup! : FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private unitService: GetUnits) {
-  }
+  constructor(private formBuilder: FormBuilder, private unitService: GetUnits) {}
   ngOnInit(): void {
     this.unitService.getAllUnits().subscribe(data => console.log(data))
     this.formGroup = this.formBuilder.group({

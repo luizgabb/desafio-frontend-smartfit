@@ -8,7 +8,7 @@ import { UnitsResponse } from '../types/units-response.interface';
 })
 export class GetUnits {
 
-  readonly apiUrl = "https://test-frontend-developer.s3.amazonaws.com/data/locations.json"
+  readonly apiUrl = "https://test-frontend-developer.s3.amazonaws.com/data/locations.json";
 
   constructor(private httpClient: HttpClient) {
   }
