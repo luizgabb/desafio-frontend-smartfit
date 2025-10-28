@@ -12,14 +12,25 @@ export class GetUnits {
   readonly apiUrl = "https://test-frontend-developer.s3.amazonaws.com/data/locations.json";
 
   private allUnitsSubject: BehaviorSubject<Location[]> = new BehaviorSubject<Location[]>([]);
-  private allUnits: Location[] = [];
+  private allUnits$: Observable<Location[]> = this.allUnitsSubject.asObservable();
   private filterUnits: Location[] = [];
 
 
   constructor(private httpClient: HttpClient) {
+     this.httpClient.get<UnitsResponse>(this.apiUrl).subscribe(data => {
+      this.allUnitsSubject.next(data.locations);
+      this.filterUnits = data.locations;
+    });
   }
-    getAllUnits(): Observable<UnitsResponse> {
-      return this.httpClient.get<UnitsResponse>(this.apiUrl)
+    getAllUnits(): Observable<Location[]> {
+      return this.allUnits$;
     }
 
+    getFilterUnits(){
+      return this.filterUnits
+    }
+
+    setFilterUnits(value: Location[]) {
+      this.filterUnits = value;
+    }
 }

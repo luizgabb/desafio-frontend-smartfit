@@ -16,26 +16,28 @@ import { FilterUnits } from '../../services/filter-units';
 export class Forms implements OnInit {
 
   results: Location[] = [];
-  formGroup! : FormGroup;
+  formGroup!: FormGroup;
   filterResults: Location[] = [];
 
   constructor(private formBuilder: FormBuilder,
-     private unitService: GetUnits,
-     private filterUnitsService: FilterUnits) {}
+    private unitService: GetUnits,
+    private filterUnitsService: FilterUnits) { }
+
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
       hour: '',
       showClosed: true
     })
     this.unitService.getAllUnits().subscribe(data => {
-      this.results = data.locations;
-      this.filterResults = data.locations;
+      this.results = data;
+      this.filterResults = data;
     });
   }
 
   onSubmit(): void {
-    let {showClosed, hour} = this.formGroup.value
-    this.filterResults = this.filterUnitsService.filter(this.results,showClosed, hour)
+    let { showClosed, hour } = this.formGroup.value
+    this.filterResults = this.filterUnitsService.filter(this.results, showClosed, hour);
+    this.unitService.setFilterUnits(this.filterResults)
 
   }
   onClean(): void {
