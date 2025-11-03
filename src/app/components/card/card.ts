@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '../../types/location.interface';
-import { NgClass} from '@angular/common';
+import { NgClass, NgForOf } from '@angular/common';
 @Component({
   selector: 'app-card',
-  imports: [NgClass],
+  imports: [NgClass, NgForOf],
   templateUrl: './card.html',
   styleUrl: './card.scss'
 })

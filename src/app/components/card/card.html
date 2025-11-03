@@ -1,10 +1,14 @@
-<div class="div">
+<div class="card">
   <span [ngClass]="{
     opened: card.opened
-  }">{{card.opened ? 'Aberto' : 'Fechado'}}</span>
-  <h3>{{card.title}}</h3>
-  <p>{{card.content}}</p>
+  }">{{ card.opened ? 'Aberto' : 'Fechado'}}</span>
+  <h3>{{ card.title}}</h3>
+  <p>{{ card.content }}</p>
   <ul>
-    <li ></li> <!--falta Ngfor-->
+    <li *ngFor="let schedule of card.schedules">
+      <b>{{ schedule.weekdays }}</b>
+      {{ schedule.hour }}
+    </li>
   </ul>
 </div>
+
