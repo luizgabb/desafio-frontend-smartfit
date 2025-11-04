@@ -14,3 +14,13 @@ interface Schedule {
   weekdays: string,
   hour: string;
 }
+
+interface Location_close{
+  id: number,
+  title: string,
+  street: string,
+  region: string,
+  city_name:string,
+  state_name: string,
+  uf: string;
+}

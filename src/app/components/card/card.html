@@ -3,7 +3,14 @@
     opened: card.opened
   }">{{ card.opened ? 'Aberto' : 'Fechado'}}</span>
   <h3>{{ card.title}}</h3>
-  <p>{{ card.content }}</p>
+  <p [innerHTML]="card.content"></p>
+  <div class="border-divider"></div>
+  <ul class="imgs">
+    <img [src]="'/images/png/' + card.mask + '-mask.png'">
+    <img [src]="'/images/png/' + card.towel + '-towel.png'">
+    <img [src]="'/images/png/' + card.fountain + '-fountain.png'">
+    <img [src]="'/images/png/' + card.locker_room + '-lockerroom.png'">
+  </ul>
   <ul>
     <li *ngFor="let schedule of card.schedules">
       <b>{{ schedule.weekdays }}</b>
