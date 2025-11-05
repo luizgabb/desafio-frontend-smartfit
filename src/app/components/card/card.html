@@ -6,10 +6,18 @@
   <p [innerHTML]="card.content"></p>
   <div class="border-divider"></div>
   <ul class="imgs">
-    <img [src]="'/images/png/' + card.mask + '-mask.png'">
-    <img [src]="'/images/png/' + card.towel + '-towel.png'">
-    <img [src]="'/images/png/' + card.fountain + '-fountain.png'">
-    <img [src]="'/images/png/' + card.locker_room + '-lockerroom.png'">
+    @if (card.mask) {
+      <img [src]="'/images/png/' + card.mask + '-mask.png'">
+    }
+    @if (card.towel) {
+      <img [src]="'/images/png/' + card.towel + '-towel.png'">
+    }
+    @if (card.fountain) {
+      <img [src]="'/images/png/' + card.fountain + '-fountain.png'">
+    }
+    @if (card.locker_room) {
+      <img [src]="'/images/png/' + card.locker_room + '-lockerroom.png'">
+    }
   </ul>
   <ul>
     <li *ngFor="let schedule of card.schedules">
