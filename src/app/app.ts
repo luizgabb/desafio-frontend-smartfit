@@ -8,10 +8,11 @@ import { CardsList } from "./components/cards-list/cards-list";
 import { CommonModule } from '@angular/common';
 import { Location } from './types/location.interface';
 import { GetUnits } from './services/get-units';
+import { Legend } from "./components/legend/legend";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, Forms, ReactiveFormsModule, CardsList, CommonModule],
+  imports: [RouterOutlet, HeaderComponent, Forms, ReactiveFormsModule, CardsList, CommonModule, Legend],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
