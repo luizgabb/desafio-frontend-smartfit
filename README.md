@@ -14,8 +14,10 @@ Neste desafio, foi implementado as seguintes funcionalidades de acordo com as re
 
 # Regras de negócio
 Filtra unidades abertas ou fechadas.
+
 Filtra unidades por período de funcionamento.
-Exibe a mensagem "Nenhuma unidade encontrada" quando não há resultados.
+
 Valida e exibe os ícones corretos de acordo com o status da unidade.
+
 # 🎨 Layout
 O layout da aplicação foi baseado nos materiais disponibilizados, incluindo designs para dispositivos móveis e desktop, cores, imagens e fontes. A fidelidade ao layout proposto foi mantida, e a aplicação é responsiva para dispositivos móveis, tablets e desktops.
