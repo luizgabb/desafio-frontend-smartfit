@@ -2,7 +2,7 @@
 
 Este repositório contém a solução para o desafio de Front-end da Smart Fit . Eu utilizei o framework Angular para desenvolver a aplicação.
 
-[deploy do projeto](desafio-frontend-smartfit-seven.vercel.app)
+[deploy do projeto](https://desafio-frontend-smartfit-seven.vercel.app/)
 
 # 📖 Sobre o desafio
 A Smart Fit, atuando no segmento de fitness, passou por várias mudanças durante a pandemia. Foi necessário desenvolver uma página para buscar unidades abertas ou fechadas para consulta e reserva.
