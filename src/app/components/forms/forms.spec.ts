@@ -6,14 +6,12 @@ describe('Forms - Teste Simplificado', () => {
   let component: Forms;
 
   beforeEach(() => {
-    // ⚠️ CRIANDO O COMPONENTE MANUALMENTE - sem TestBed
     component = new Forms(
       new FormBuilder(),
-      {} as any, // GetUnits - ignora
-      {} as any  // FilterUnits - ignora
+      {} as any,
+      {} as any
     );
 
-    // Inicializa manualmente
     component.formGroup = new FormBuilder().group({
       hour: '',
       showClosed: true
@@ -22,32 +20,21 @@ describe('Forms - Teste Simplificado', () => {
     component.filterResults = [];
   });
 
-  it('should create component manually', () => {
+  it('a função foi criada?', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should reset form when onClean is called - VERSÃO SIMPLES', () => {
-    console.log('🎯 TESTANDO APENAS A FUNÇÃO onClean...');
-
-    // 1️⃣ PREENCHE o formulário
+  it('após o botão ser clicado, o forms foi limpo?', () => {
     component.formGroup.setValue({
       hour: 'afternoon',
       showClosed: false
     });
 
-    console.log('📝 ANTES de onClean:', component.formGroup.value);
-
-    // 2️⃣ CHAMA a função
     component.onClean();
-
-    // 3️⃣ VERIFICA se limpou
-    console.log('📝 DEPOIS de onClean:', component.formGroup.value);
 
     expect(component.formGroup.value).toEqual({
       hour: null,
       showClosed: null
     });
-
-    console.log('✅ TESTE PASSOU! Formulário foi resetado corretamente.');
   });
 });
